@@ -18,10 +18,12 @@ func main() {
 
 	hh := handlers.NewHello(l)
 	gh := handlers.NewGoodbye(l)
+	ph := handlers.NewProducts(l)
 
 	sm := http.NewServeMux()
 	sm.Handle("/", hh)
 	sm.Handle("/goodbye", gh)
+	sm.Handle("/products", ph)
 
 	// create a new server
 	s := http.Server{
